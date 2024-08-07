@@ -1,0 +1,271 @@
+*{
+margin: 0%;
+padding: 0%;
+
+}
+
+/*  esta posicion relative es para que podamos mover esos containers
+y el witdh va a ocupar el 100 de nuestra pantalla
+el height es para que ocupe el alto de nuestra pantalla
+ */
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+background-color: #f3f5fc;
+
+}
+
+/* en este caso vamos es a estilizar el testarea
+no el container encriptar
+va a tener una posicion absoluta
+y el width es lo que va a ocupar en la pantalla
+si vemos el contenedor ingresar texto solo ocupa un parte de la pantalla
+ya que al lado esta la imagen y abajo los botones
+lo mismo pasa con el height ya que abajo estan los botones y no esta arriba el ingresar texto
+y el left es que tan corrido esta desde la izquierda de la pantalla
+y el top es tambien que tan corrido esta de la parte de arriba
+no va a tener border, font family tipo de letra, font style es normal
+osea nada de negrita
+font weight grozor de la letra, font zise tamaño de la letra
+*/
+.texto{
+position: absolute;
+width: 42%;
+height: 60%;
+left: 12%;
+top: 15%;
+border: none;
+font-family: "Inter";
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 150%;
+background-color: #f3f5fc;
+}
+
+/* bien este texto placeholder coje directamente este placeholder ya que
+no es necesario cojer toda la clase solamente este placeholder, que le vamos a 
+cambiar el color */
+.texto::placeholder{
+color: #0a3871;
+
+}
+
+/* bien estas propiedades la prpoieddad focus es cuando ponemos el 
+mous para escribir sale un borde, entoces vamos a quitar eso y la otra propiedad 
+es cuando la palabra ingresar texto este activa salga como un palito parpadeando*/
+.texto:focus,
+.texto:active{
+border: none;
+outline: none;
+
+}
+
+.terminos{
+
+    display: flex;
+ 
+    flex-direction: row;
+    align-items: center;
+    padding: 0%;
+    gap: 8px;
+    position: absolute;
+    width: 80px;
+    left: 12%;
+    top: 80%;
+    white-space: nowrap;
+}
+
+.terminos p{
+
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.botones{
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0 ;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+
+}
+.btn-encriptar{
+align-items: center;
+justify-content: center;
+padding: 2%;
+gap: 8px;
+width: 25%;
+background-color: #0b88dd;
+border-radius: 24px;
+font-family: "Inter";
+font-size: 18px;
+line-height: 19px;
+text-align: center;
+color: #fff;
+
+}
+
+.btn-desencriptar{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2%;
+    gap: 8px;
+    width: 25%;
+    background-color: #d8dfe8;
+    border: 1px solid #0a3871;
+    border-radius: 24px;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #0a3871;
+}
+
+/*  esta funcion lo que hace es que ponemos el cursor 
+sobre los botones se hace un poco mas grande con esta configuracion*/
+.btn-desencriptar:hover,
+.btn-encriptar:hover{
+
+    margin: 0.3%;
+    width: 24.5%;
+    padding: 1.8%;
+}
+/* aqui va la parte del encriptado
+donde van las imagenes y los mensajes*/
+.encriptado{
+display: flex;
+justify-content: center;
+position: absolute;
+width: 30%;
+height: 90%;
+left: 60%;
+top: 5%;
+background: #fff;
+box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+border-radius: 32px;
+}
+.mensaje-encriptado{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    text-align: center;
+}
+.mensaje-encriptado h2{
+width: 60%;
+font-family: "inter";
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 120%;
+text-align: center;
+color: #343a40;
+
+}
+.mensaje-encriptado p{
+width: 80%;
+font-family: "Inter";
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+text-align: center;
+color: #495057;
+
+}
+.encriptado img{
+
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top: 15%;
+
+}
+/* aqui se va a manejar lo de la responsividad
+de la imagen para que se adapte alas pantallas*/
+@media (max-width: 57.5em){
+
+    .container{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .encriptar{
+        width: 100%;
+    }
+    .texto{
+        width: 80%;
+        height: 60%;
+        left: 10%;
+        top: 5%;
+    }
+    .terminos{
+width: 80%;
+left: 10%;
+top: 67%;
+
+    }
+    .terminos p{
+font-size: 16px;
+    }
+    .botones{
+        width: 80%; 
+        left: 10%;
+        top: 70%;
+    }
+    .btn-encriptar{
+
+        width: 48%;
+        border-radius: 16px;
+    }
+    .btn-desencriptar{
+        width: 48%;
+        border-radius: 16px; 
+    }
+    .btn-desencriptar:hover,.btn-encriptar:hover{
+        margin: 0.3%;
+        width: 47.5%;
+        padding: 1.8%;
+    }
+    .encriptado{
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top: 80%;
+    }
+.mensaje-encriptado{
+    width: 100%;
+    top: 5%;
+
+}
+.encriptado img{
+    top: 0;
+    display: none;
+    visibility: hidden;
+}
+}
+

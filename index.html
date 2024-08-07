@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encriptador de texto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagenes/leo-letter-logo-design-illustration-260nw-2286713013.webp" type="image/x-icon">
+</head>
+<body>
+    
+<!--este es el contenedor principal 
+ despues le sigue el contenedor texto
+ y luego esta el textarea area que es una funcion 
+  que como se muestra tiene un nombre la clase para 
+  estilizarla en css
+  un id para luego llamarla desde javascript
+  y 30 columnas y 10 filas 
+  y el placeholder es el mensaje-->
+<div class="container">
+<div class="encriptar">
+<textarea
+ name="texto" 
+ class="texto"
+ id="texto"  
+ cols="30 "
+  rows="10" 
+ placeholder="ingresa texto aqui
+
+"></textarea>
+
+<!--este terminos es el mensaje que dice solo letras 
+minusculas y sin acentos-->
+<div class="terminos">
+<p > solo letras minusculas y sin acentos. </p>
+</div>
+<!--y bueno en este div seran los botones
+lo que dice type boton es que este boton es de tipo boton
+y lo que dice onclick es que cuando yo haga click en ese boton 
+encripte o guarde una accion en en la funcion encriptar-->
+<div class="botones">
+<button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
+<!--este input cumple la misma funcion de el boton es otra forma de hacerlo
+tambien como vemos el value es el nombre del boton y ya lo otro es lo mismo -->
+<input type="button" class="btn-desencriptar" value="desencriptar" onclick="desencriptar()">
+</div>
+</div>
+
+<!--bueno este contenedor es el que aparece en la izquierda 
+ donde va la imagen y le cojemos su id ya que si el texto
+ esta encriptado cambiara de imagen, aparte creamos el contenedor 
+ mensaje encriptado con su tambien id ya que cambiara el texto si el mensaje es 
+ exitoso-->
+<div class="encriptado">
+<img src="imagenes/images.jpeg" alt="" id="muñeco">
+<div class="mensaje-encriptado" id="mensaje-encriptado">
+    <h2 id="titulomensaje"> Ningun mensaje fue encontrado</h2>
+    <p id="parrafo"> ingresar texto que deseas encriptar o
+        <strong>desencriptar</strong> </p>
+    <!--<textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>  -->
+</div>
+</div>
+</div>
+</body>
+
+<!-- esta es la conexion con el javascript-->
+<script src="index.js"></script>
+</html>
