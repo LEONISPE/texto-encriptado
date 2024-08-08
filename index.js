@@ -13,7 +13,7 @@ let textoCifrado = texto
                 .replace(/u/gi,"ufat");
 
 
-                if(texto.length !=0){
+                if(texto.length !=0 ){
                     document.getElementById("texto").value = textoCifrado;
                     titulomensaje.textContent = "texto encriptado con exito";
                     parrafo.textContent= "";

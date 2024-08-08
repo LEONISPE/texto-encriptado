@@ -19,20 +19,23 @@ background-color: #f3f5fc;
 /* en este caso vamos es a estilizar el testarea
 no el container encriptar
 va a tener una posicion absoluta
-y el width es lo que va a ocupar en la pantalla
+y el width es la anchura de esa caja con comparacion de la pajina principal, 
+es decir le dijimos al container que es toda la pajina que tenga un witdh de 100% y que el witdh 
+del texto sea el 42% de esa pajina
 si vemos el contenedor ingresar texto solo ocupa un parte de la pantalla
 ya que al lado esta la imagen y abajo los botones
 lo mismo pasa con el height ya que abajo estan los botones y no esta arriba el ingresar texto
 y el left es que tan corrido esta desde la izquierda de la pantalla
 y el top es tambien que tan corrido esta de la parte de arriba
-no va a tener border, font family tipo de letra, font style es normal
+no va a tener border ya que es una caja y es para quitarle e
+border, font family tipo de letra, font style es normal
 osea nada de negrita
 font weight grozor de la letra, font zise tamaño de la letra
 */
 .texto{
 position: absolute;
 width: 42%;
-height: 60%;
+height:60%;
 left: 12%;
 top: 15%;
 border: none;
@@ -42,6 +45,31 @@ font-weight: 400;
 font-size: 32px;
 line-height: 150%;
 background-color: #f3f5fc;
+}
+.imagen_mia{
+    display: flex;
+position: absolute;
+width: 40%;
+height: 12%;
+left: 12%;
+top: 48%;
+gap: 0%;
+
+
+}
+
+.imagen_mia p {
+display: flex;
+flex-direction: row;
+    align-items: center;
+    width: 30%;
+    left: 5%;
+    color: #0b88dd;
+    font-size: 18px;
+    font-weight: 800;
+font-style: italic;
+
+
 }
 
 /* bien este texto placeholder coje directamente este placeholder ya que
@@ -62,6 +90,10 @@ outline: none;
 
 }
 
+/* el display flex es para que esas letras se puedan ubicar que tengan 
+felxibidad , el flex direction es para que esa palabra este en se mueba en fila osea  -------- asi 
+y no en colunmna , el align items es para centrar el elemento, 
+*/
 .terminos{
 
     display: flex;
@@ -74,7 +106,7 @@ outline: none;
     width: 80px;
     left: 12%;
     top: 80%;
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .terminos p{
@@ -87,10 +119,11 @@ outline: none;
     color: #495057;
     opacity: 0.8;
     flex: none;
-    order: 1;
+   order: 1;
     flex-grow: 0;
 }
 
+/* este padding es la distancia que hay entre los botones y el termino*/
 .botones{
 
     display: flex;
@@ -211,7 +244,11 @@ de la imagen para que se adapte alas pantallas*/
 
     .container{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
+    }
+    .imagen_mia{
+width: 90%;
 
     }
     .encriptar{
@@ -265,7 +302,7 @@ font-size: 16px;
 .encriptado img{
     top: 0;
     display: none;
-    visibility: hidden;
+   visibility: hidden;
 }
 }
 
